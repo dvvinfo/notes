@@ -1,7 +1,10 @@
+// vue.config.js
 module.exports = {
-    pubLicPath: process.env.NODE_ENV === 'production'
-    ? '/'
-    : '/',
+    // options...
+    publicPath: process.env.NODE_ENV === 'production'
+      ? '/'
+      : '/',
     assetsDir: '',
+    filenameHashing: true,
     productionSourceMap: false
-}
+  }
