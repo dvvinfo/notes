@@ -29,7 +29,7 @@ export default {
     text-align: center;
 }
 .btn{
-    margin: 20px 0;
+    margin-top: 20px;
 }
 
 </style>

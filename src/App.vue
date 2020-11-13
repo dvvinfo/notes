@@ -10,16 +10,8 @@
             :note="note"
             @addNote="addNote"/>
         
-        <!-- note-list -->
-        <div class="notes">
-            <div class="note" v-for="(note, index) in notes" :key="index">
-                <div class="note__header"><p>{{ note.title }}</p></div>
-                <div class="note__body"><p>{{ note.descr }}</p>
-                    <span>{{ note.date }}</span>
-                
-                </div>
-            </div>
-        </div>
+        <notes
+        :notes="notes"/>
       </div>
     </section>
 
@@ -33,10 +25,11 @@
 import message from "@/components/Message.vue";
 import Message from './components/Message.vue';
 import newNote from './components/NewNote.vue';
+import notes from './components/Notes.vue';
 
 export default {
   components: {
-        message, newNote
+        message, newNote, notes
 
     },
   data () {
