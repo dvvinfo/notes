@@ -6,13 +6,10 @@
       <div class="container">
         <h1>{{ title }}</h1>
         <message v-if="message" :message="message"/>
+        <newNote
+            :note="note"
+            @addNote="addNote"/>
         
-        <!-- new note -->
-        <div class="new-note">
-            <input type="text" v-model="note.title">
-            <textarea v-model="note.descr"></textarea>
-            <button @click="addNote">Добавить заметку</button>
-        </div>
         <!-- note-list -->
         <div class="notes">
             <div class="note" v-for="(note, index) in notes" :key="index">
@@ -35,10 +32,11 @@
 <script>
 import message from "@/components/Message.vue";
 import Message from './components/Message.vue';
+import newNote from './components/NewNote.vue';
 
 export default {
   components: {
-        message
+        message, newNote
 
     },
   data () {
@@ -74,7 +72,7 @@ export default {
                 addNote() {
                     // let {title, descr} = this.note
                     if(this.note.title === '') {
-                        this.message = 'Заголовок не может быть пустым!'
+                        this.message = 'Название заметки не может быть пустым!'
                         return false
                     }
                     if(this.note.descr === '') {

@@ -18,6 +18,7 @@ export default {
 .message {
     text-align: center;
     padding: 20px;
+    color: red;
 }
 
 </style>
